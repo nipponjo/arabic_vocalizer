@@ -1,6 +1,15 @@
+
+
 Arabic deep-learning based diacritization models ([Shakkala](https://github.com/Barqawiz/Shakkala), [Shakkelha](https://github.com/AliOsm/shakkelha)) in the ONNX format.
 
+Install with:
+```
+pip install git+https://github.com/nipponjo/arabic_vocalizer.git
+```
+
+Example:
 ```python
+from arabic_vocalizer import vocalize
 
 # %% unvocalized input
 input_text = "اللغة العربية هي أكثر اللغات السامية تحدثا، وإحدى أكثر اللغات انتشارا في العالم، يتحدثها أكثر من 467 مليون نسمة"
