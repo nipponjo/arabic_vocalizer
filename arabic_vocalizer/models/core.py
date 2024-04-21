@@ -18,14 +18,27 @@ def get_model(model: _MODEL_TYPE = 'shakkelha'):
 
 
 def vocalize(input_text: Union[str, List[str]], 
-          model: _MODEL_TYPE = 'shakkelha',
-          return_probs: bool = False) -> Union[str, List[str]]:
+             model: _MODEL_TYPE = 'shakkelha',
+             return_probs: bool = False
+             ) -> Union[str, List[str]]:
     """
-    Args:
-        input_text
-        model
-        return_probs
+    Parameters:
+        input_text (str|list[str]): Unvocalized text
+        model: Vocalization model [shakkala|shakkelha]
+        return_probs: Return probabilities?
+        
     Returns:
+        (str|list[str]): Predicted vocalized text
+    
+    Examples:
+        >>> from arabic_vocalizer import vocalize
+        >>> input_text = "اللغة العربية هي أكثر اللغات السامية تحدثا، وإحدى أكثر اللغات انتشارا في العالم، يتحدثها أكثر من 467 مليون نسمة"
+        # shakkala output
+        >>> print(vocalize(input_text, model='shakkala'))
+        >>> اللُّغَةُ الْعَرَبِيَّةُ هِيَ أَكْثَرُ اللُّغَاتِ السَّامِيَةِ تَحَدُّثًا، وَإِحْدَى أَكْثَرِ اللُّغَاتِ انْتِشَارًا فِي الْعَالِمِ، يَتَحَدَّثُهَا أَكْثَرُ مَنْ 467 مُلْيُونُ نُسْمَةَ
+        # shakkelha output
+        >>> print(vocalize(input_text, model='shakkelha'))
+        >>> اللُّغَةُ الْعَرَبِيَّةُ هِيَ أَكْثَرُ اللُّغَاتِ السَّامِيَةِ تَحَدُّثًا، وَإِحْدَى أَكْثَرِ اللُّغَاتِ انْتِشَارًا فِي الْعَالِمِ، يَتَحَدَّثُهَا أَكْثَرُ مِنْ 467 مَلْيُونٍ نَسَمَةً
 
     """
     assert model in ('shakkala', 'shakkelha')
